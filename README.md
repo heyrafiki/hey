@@ -2,6 +2,13 @@
 
 The command line for the Heyrafiki API.
 
+## Where this fits
+
+The CLI is a diagnostic and Sandbox-read surface for Heyrafiki's versioned
+REST contract. It gives integration teams a scriptable way to verify local
+configuration and governed reads without moving authorization or domain
+decisions into the command line.
+
 `hey` gives integration teams a fast, scriptable path into the same governed
 REST contract used by the Platform and SDKs. It checks local configuration and
 runs authenticated read requests against Sandbox projects.
