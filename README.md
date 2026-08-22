@@ -2,16 +2,15 @@
 
 The command line for the Heyrafiki API.
 
-## Where this fits
+## What this tool is for
 
-The CLI is a diagnostic and Sandbox-read surface for Heyrafiki's versioned
-REST contract. It gives integration teams a scriptable way to verify local
-configuration and governed reads without moving authorization or domain
-decisions into the command line.
+Use `hey` to test a Sandbox integration from the command line. It checks local
+configuration and makes authenticated read requests, so integration teams can
+verify their setup before they build it into an application.
 
-`hey` gives integration teams a fast, scriptable path into the same governed
-REST contract used by the Platform and SDKs. It checks local configuration and
-runs authenticated read requests against Sandbox projects.
+`hey` gives integration teams a fast, scriptable path into the same REST API
+used by the Platform and SDKs. It checks local configuration and runs
+authenticated read requests against Sandbox projects.
 
 ## Build and run
 
@@ -31,9 +30,10 @@ Set `HEYRAFIKI_API_KEY`, then inspect a resource:
 node dist/index.js get /practitioners?limit=5
 ```
 
-The command preserves the API request identifier and typed error envelope so
-CI and operator workflows can retain the same evidence as direct REST clients.
-Write operations remain caller-controlled through the REST API and typed SDKs.
+The command prints the API request identifier and structured errors, giving CI
+and operational tools the information needed to troubleshoot a request. Write
+operations remain in the REST API and SDKs, where applications provide the
+required intent and idempotency key.
 
 ## Package contents
 
